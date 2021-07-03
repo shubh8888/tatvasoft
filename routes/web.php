@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\BlogsController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/blog/create', [App\Http\Controllers\BlogsController::class, 'create'])->name('blog.create');
+    Route::post('/blog/store', [App\Http\Controllers\BlogsController::class, 'store'])->name('blog.store');
+});
