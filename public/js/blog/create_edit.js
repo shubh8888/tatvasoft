@@ -1,10 +1,20 @@
-$("#blog_form").submit(function(e){e.preventDefault();}).validate({
+$(document).ready(function(){
+    $('.datepicker_start_date').datepicker({
+        format: 'dd/mm/yyyy',
+        startDate: '-3d'
+    });
+});
+
+$("#blog_form").submit(function(e){}).validate({
  
     rules: {
         title: {
             required: true,
         },
         description: {
+            required: true,
+        },
+        image: {
             required: true,
         },
     },
@@ -14,6 +24,10 @@ $("#blog_form").submit(function(e){e.preventDefault();}).validate({
         },
         description: {
             required: "Please enter Description",
+        },
+        image: {
+            required: "Please enter Image",
         }
     }
+    
 });

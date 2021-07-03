@@ -23,4 +23,5 @@ Route::get('/', [App\Http\Controllers\BlogsController::class, 'index'])->name('h
 Route::middleware(['auth'])->group(function () {
     Route::get('/blog/create', [App\Http\Controllers\BlogsController::class, 'create'])->name('blog.create');
     Route::post('/blog/store', [App\Http\Controllers\BlogsController::class, 'store'])->name('blog.store');
+    Route::get('/blog/delete/{id}', [App\Http\Controllers\BlogsController::class, 'destroy'])->name('blog.destroy');
 });

@@ -53,7 +53,7 @@
                             <label for="start_date" class="col-md-4 col-form-label text-md-right">Start Date</label>
 
                             <div class="col-md-6">
-                                <input id="start_date" type="text" class="datepicker form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ old('start_date') }}"  readonly autocomplete="start_date" autofocus>
+                                <input id="start_date" type="text" class="datepicker_start_date form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ old('start_date') }}"  readonly autocomplete="start_date" autofocus>
 
                                 @error('start_date')
                                     <span class="invalid-feedback" role="alert">
